@@ -1,7 +1,16 @@
-import { Userprofile } from './userprofile';
+import { TestBed } from '@angular/core/testing';
 
-describe('Userprofile', () => {
-  it('should create an instance', () => {
-    expect(new Userprofile()).toBeTruthy();
+import { UserprofileService } from './userprofile.service';
+
+describe('UserprofileService', () => {
+  let service: UserprofileService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(UserprofileService);
+  });
+
+  it('should be created', () => {
+    expect(service).toBeTruthy();
   });
 });
