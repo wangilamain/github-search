@@ -1,0 +1,35 @@
+<div class="user">
+  <H4>GITHUB API SEARCH APP</H4>
+  <p>To search for any github repo, input the name of the repository in the 
+       field and you will get your result.</p>
+       <p>HAPPY HUNTING</p>
+<form class="search-form">
+  <div class="search form-group">
+      <input class= "form-control" type="text" placeholder="Search Github" [(ngModel)]="username" name="username" (keyup)='getUserRepos($event)'>
+      <a type="submit" type= "button" onlick="getUserRepos()" class="btn btn-outline-secondary">Search</a>
+  </div>
+</form>
+
+<div class="container">
+ 
+ 
+  <div class="card border-dark mb-3">
+      <div class="card-header">Repos</div>
+      <div class="card-body">
+          <ul *ngFor="let repo of repos" class="list-group">
+           <li class="list-group-item" >
+              {{ repo.name }} <a
+              class="btn btn-outline-secondary float-right"
+              href="{{ repo.html_url }}"
+              target="_blank"
+              >View On Github</a
+            >
+           </li>
+           <li class="list-group-item" >
+              {{ repo.description }}
+           </li>
+
+          </ul>
+      </div>
+</div>
+</div>
